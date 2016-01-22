@@ -12,4 +12,6 @@ Mocha, chai, jsdom:
 1- Install all three
 2- Setup jsdom (maybe switch to mocha/phantomjs later) 
 
-
+Immutable, chai-immutable, and test script setup: 
+1- Install immutable, and chai-immutable for assertions on immutable objects 
+2- Setup the test script in package.json
