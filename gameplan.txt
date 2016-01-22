@@ -4,4 +4,7 @@ Webpack:
 2- Create the "webpack.config.js" file
 >> Now should be able to run webpack-dev-server to start server
 
+Babel: 
+1- Install babel es2015 and jsx modules
+2- update the package.json and webpack.config.js to use babel
 

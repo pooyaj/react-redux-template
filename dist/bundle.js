@@ -51,6 +51,8 @@
 /* 1 */
 /***/ function(module, exports) {
 
+	"use strict";
+
 	console.log("working !");
 
 /***/ }
