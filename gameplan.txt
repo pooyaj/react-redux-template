@@ -8,3 +8,8 @@ Babel:
 1- Install babel es2015 and jsx modules
 2- update the package.json and webpack.config.js to use babel
 
+Mocha, chai, jsdom: 
+1- Install all three
+2- Setup jsdom (maybe switch to mocha/phantomjs later) 
+
+
