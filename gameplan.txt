@@ -1,0 +1,7 @@
+Webpack: 
+1- Add webpack and webpack dev server
+    (might want to do a global install to bring them in path)
+2- Create the "webpack.config.js" file
+>> Now should be able to run webpack-dev-server to start server
+
+
