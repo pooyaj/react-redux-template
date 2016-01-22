@@ -15,3 +15,10 @@ Mocha, chai, jsdom:
 Immutable, chai-immutable, and test script setup: 
 1- Install immutable, and chai-immutable for assertions on immutable objects 
 2- Setup the test script in package.json
+
+React, react dom, react hot loader: 
+1- Add these libraries
+2- Configure webpack so it can use the hot-loader
+
+
+==== Everything should be good to go here =====
