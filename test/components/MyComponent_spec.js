@@ -11,7 +11,6 @@ describe('MyComponent', () => {
     const comp = renderIntoDocument(
       <MyComponent data="Hey" />
     );
-    
     const component = scryRenderedDOMComponentsWithTag(comp, 'div');
 
     expect(component.length).to.equal(1);
