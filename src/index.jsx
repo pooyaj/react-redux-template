@@ -1,9 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Voting from './components/MyComponent';
+import Router, {Route} from 'react-router';
+import App from './components/App';
+import MyComponent from './components/MyComponent';
+
+
+const routes = <Route component={App}>
+  <Route path="/" component={MyComponent} />
+  <Route path="/anotherRoute" component={MyComponent} />
+</Route>;
 
 ReactDOM.render(
-  <Voting data="Hello World" />,
+  <Router>{routes}</Router>,
   document.getElementById('app')
 );
 
