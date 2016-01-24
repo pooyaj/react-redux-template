@@ -13,3 +13,5 @@ Object.keys(window).forEach((key) => {
     global[key] = window[key];
   }
 });
+
+chai.use(chaiImmutable);
