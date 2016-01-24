@@ -7,8 +7,9 @@ import React from 'react';
   are sure shallow comparison would be enough to detect state changes. 
 */
 import PureRenderMixin from 'react-addons-pure-render-mixin';
+import {connect} from 'react-redux'
 
-export default React.createClass({
+const myComponent = React.createClass({
   mixins: [PureRenderMixin],
   getData: function() {
     return this.props.data || [];
@@ -19,3 +20,11 @@ export default React.createClass({
     </div>;
   }
 });
+
+function mapStateToProps(state) {
+  return {
+    data: state.get('message')
+  };
+}
+
+export const MyComponentContainer = connect(mapStateToProps)(myComponent);
