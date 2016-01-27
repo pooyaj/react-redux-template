@@ -1,13 +1,31 @@
-import {Map} from 'immutable';
+import {Map, List, fromJS} from 'immutable';
+import { combineReducers } from 'redux'
 
 function setState(state, newState) {
    return state.merge(newState);
 }
 
-export default function(state = Map(), action) {
+function fooReducer(state = List(), action) {
   switch (action.type) {
-    case 'SET_STATE':
-      return setState(state, action.state);
-  }  
+    case 'ADD_FOO':
+      return state.push(action.data);
+  }
   return state;
 }
+
+function barReducer(state = 0, action) {
+  switch (action.type) {
+    case 'ADD_BAR':
+      return action.data;
+  }
+  return state;
+}
+
+
+
+const reducer = combineReducers({
+  fooReducer, 
+  barReducer
+})
+
+export default reducer;
