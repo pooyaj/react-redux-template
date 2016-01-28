@@ -6,14 +6,10 @@ import {MyComponentContainer} from './components/MyComponent';
 import {createStore} from 'redux';
 import reducer from './reducer';
 import {Provider} from 'react-redux';
-import * as AllActions from './actions'
+import * as AllActions from './actions/actionTypes'
 
 
 const store = createStore(reducer);
-
-setInterval(()=> store.dispatch(
-  AllActions.setState({
-    message: new Date().getTime()})), 1000);
 
 const routes = <Route component={App}>
   <Route path="/" component={MyComponentContainer} />

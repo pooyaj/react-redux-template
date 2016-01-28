@@ -16,15 +16,27 @@ const myComponent = React.createClass({
   },
   render: function() {
     return <div className="myComponent">
-      {this.getData()}
+      <input type='text' ref='input' />
+      <button onClick={(e) => this.props.onSubmit(this.refs.input.value.trim())}>
+        Submit
+       </button>
     </div>;
   }
 });
 
+
+// Which action creators does it want to receive by props?
+function mapDispatchToProps(dispatch) {
+  return {
+    onSubmit: (data) => dispatch(addFoo(data))
+  }
+}
+
+// Which part of the Redux global state does our component want to receive as props?
 function mapStateToProps(state) {
   return {
-    data: state.get('message')
+    data: state['foo']
   };
 }
 
-export const MyComponentContainer = connect(mapStateToProps)(myComponent);
+export const MyComponentContainer = connect(mapStateToProps, mapDispatchToProps)(myComponent);

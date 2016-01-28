@@ -2,9 +2,6 @@ import {Map, List, fromJS} from 'immutable';
 import { combineReducers } from 'redux'
 import * as ActionTypes from './actions/actionTypes'
 
-function setState(state, newState) {
-   return state.merge(newState);
-}
 
 function fooReducer(state = List(), action) {
   switch (action.type) {
