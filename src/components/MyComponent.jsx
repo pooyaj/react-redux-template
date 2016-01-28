@@ -8,6 +8,7 @@ import React from 'react';
 */
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {connect} from 'react-redux'
+import {addFoo} from '../actions/actionCreators'
 
 const myComponent = React.createClass({
   mixins: [PureRenderMixin],

@@ -3,13 +3,21 @@ import ReactDOM from 'react-dom';
 import Router, {Route} from 'react-router';
 import App from './components/App';
 import {MyComponentContainer} from './components/MyComponent';
-import {createStore} from 'redux';
+import {createStore, compose, applyMiddleware} from 'redux';
 import reducer from './reducer';
 import {Provider} from 'react-redux';
 import * as AllActions from './actions/actionTypes'
+import DevTools from './components/DevTools';
+import thunkMiddleware from 'redux-thunk';
 
+const finalCreateStore = compose(
+  // Middleware you want to use in development:
+  applyMiddleware(thunkMiddleware),
+  // Required! Enable Redux DevTools with the monitors you chose
+  DevTools.instrument()
+)(createStore);
 
-const store = createStore(reducer);
+const store = finalCreateStore(reducer);
 
 const routes = <Route component={App}>
   <Route path="/" component={MyComponentContainer} />
@@ -18,7 +26,10 @@ const routes = <Route component={App}>
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>{routes}</Router>
+      <div>
+      <Router>{routes}</Router>
+      <DevTools />
+    </div>
   </Provider>,
   document.getElementById('app')
 );
