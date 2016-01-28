@@ -2,6 +2,7 @@ import {List, Map, fromJS} from 'immutable';
 import {expect} from 'chai';
 
 import reducer from '../src/reducer';
+import * as ActionTypes from '../src/actions/actionTypes';
 
 describe('reducer', () => {
 
@@ -11,7 +12,7 @@ describe('reducer', () => {
       barReducer: 2
     };
     const action = {
-      type: 'ADD_FOO',
+      type: ActionTypes.ADD_FOO,
       data: 3
       }
     const nextState = reducer(initialState, action);

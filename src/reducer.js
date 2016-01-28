@@ -1,5 +1,6 @@
 import {Map, List, fromJS} from 'immutable';
 import { combineReducers } from 'redux'
+import * as ActionTypes from './actions/actionTypes'
 
 function setState(state, newState) {
    return state.merge(newState);
@@ -7,7 +8,7 @@ function setState(state, newState) {
 
 function fooReducer(state = List(), action) {
   switch (action.type) {
-    case 'ADD_FOO':
+    case ActionTypes.ADD_FOO:
       return state.push(action.data);
   }
   return state;
@@ -15,13 +16,11 @@ function fooReducer(state = List(), action) {
 
 function barReducer(state = 0, action) {
   switch (action.type) {
-    case 'ADD_BAR':
+    case ActionTypes.ADD_BAR:
       return action.data;
   }
   return state;
 }
-
-
 
 const reducer = combineReducers({
   fooReducer, 
