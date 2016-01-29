@@ -17,7 +17,7 @@ const myComponent = React.createClass({
   },
   render: function() {
     return <div className="myComponent">
-      <input type='text' ref='input' />
+      <input type='text' ref='input' value={this.props.data}/>
       <button onClick={(e) => this.props.onSubmit(this.refs.input.value.trim())}>
         Submit
        </button>
