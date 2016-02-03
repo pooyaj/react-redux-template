@@ -7,6 +7,7 @@ import {createStore, compose, applyMiddleware} from 'redux';
 import reducer from './reducer';
 import {Provider} from 'react-redux';
 import * as AllActions from './actions/actionTypes'
+import {setState} from './actions/actionCreators'
 import DevTools from './components/DevTools';
 import thunkMiddleware from 'redux-thunk';
 import Firebase from 'firebase'
@@ -21,10 +22,10 @@ const finalCreateStore = compose(
 )(createStore);
 
 const store = finalCreateStore(reducer);
-const ref = new Firebase("https://blinding-inferno-5444.firebaseio.com");
+const ref = new Firebase("https://blinding-inferno-5444.firebaseio.com/");
 
 ref.on("value", function(snapshot) {
-  
+  store.dispatch(setState(snapshot.val()));
 });
 
 

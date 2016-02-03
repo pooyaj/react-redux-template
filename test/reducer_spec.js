@@ -8,8 +8,8 @@ describe('reducer', () => {
 
   it('handles ADD_FOO', () => {
     const initialState = {
-      fooReducer: List.of(1, 2), 
-      barReducer: 2
+      foo: List.of(1, 2), 
+      bar: 2
     };
     const action = {
       type: ActionTypes.ADD_FOO,
@@ -17,8 +17,8 @@ describe('reducer', () => {
       }
     const nextState = reducer(initialState, action);
     
-    expect(nextState.fooReducer).to.equal(List.of(1,2,3));
-    expect(nextState.barReducer).to.equal(2);
+    expect(nextState.foo).to.equal(List.of(1,2,3));
+    expect(nextState.bar).to.equal(2);
   });
 
 
@@ -31,9 +31,10 @@ describe('reducer', () => {
         bar: 2
       }
     };
+    
     const nextState = reducer(initialState, action);
-    expect(nextState.fooReducer).to.equal(List.of(1,2,3));
-    expect(nextState.barReducer).to.equal(2);    
+    expect(nextState.foo).to.equal(List.of(1,2,3));
+    expect(nextState.bar).to.equal(2);    
 
   });
 /*

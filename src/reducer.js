@@ -24,8 +24,8 @@ function barReducer(state = 0, action) {
 }
 
 const reducer = combineReducers({
-  fooReducer, 
-  barReducer
+  foo: fooReducer, 
+  bar: barReducer
 })
 
 export default reducer;
