@@ -9,6 +9,9 @@ import {Provider} from 'react-redux';
 import * as AllActions from './actions/actionTypes'
 import DevTools from './components/DevTools';
 import thunkMiddleware from 'redux-thunk';
+import Firebase from 'firebase'
+
+
 
 const finalCreateStore = compose(
   // Middleware you want to use in development:
@@ -18,6 +21,12 @@ const finalCreateStore = compose(
 )(createStore);
 
 const store = finalCreateStore(reducer);
+const ref = new Firebase("https://blinding-inferno-5444.firebaseio.com");
+
+ref.on("value", function(snapshot) {
+  
+});
+
 
 const routes = <Route component={App}>
   <Route path="/" component={MyComponentContainer} />

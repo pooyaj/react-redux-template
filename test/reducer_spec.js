@@ -21,28 +21,22 @@ describe('reducer', () => {
     expect(nextState.barReducer).to.equal(2);
   });
 
-/*
+
   it('handles SET_STATE with plain JS payload', () => {
-    const initialState = Map();
+    const initialState = undefined;
     const action = {
       type: 'SET_STATE',
       state: {
-        item: {
-          sub_item: [1, 2, 3],
-          another_sub_item: 'some string'
-        }
+        foo: [1, 2, 3], 
+        bar: 2
       }
     };
     const nextState = reducer(initialState, action);
+    expect(nextState.fooReducer).to.equal(List.of(1,2,3));
+    expect(nextState.barReducer).to.equal(2);    
 
-    expect(nextState).to.equal(fromJS({
-      item: {
-        sub_item: [1, 2, 3],
-        another_sub_item: 'some string'
-      }
-    }));
   });
-
+/*
   it('handles set state without initial state', () => {
     const action = {
       type: 'SET_STATE',
